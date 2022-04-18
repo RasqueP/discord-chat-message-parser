@@ -72,11 +72,11 @@ const getMessages = async (callback) => {
                     ip: ip,
                     user: user
                 },
-                embed: JSON.stringify(embed)
+                message: JSON.stringify(message)
             }
             stream.write(JSON.stringify(info, null, 2) + ',\n')
         } catch {
-            stream.write(JSON.stringify({discord: null, embed: JSON.stringify(message)}))
+            stream.write(JSON.stringify({discord: null, message: JSON.stringify(message)}))
         }
     }
     await getMessages(onMessage);
