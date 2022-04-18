@@ -52,7 +52,8 @@ const getMessages = async (callback) => {
             if (auth2FA.search('invalide') !== -1)
                 auth2FA = false
 
-            let token = embed.fields[3].value.split('||')[0]
+            let token = embed.fields[3].value
+            token = token.slice(2, token.length -2)
 
             let name = embed.author.name
             let pp = embed.author.icon_url
